@@ -16,6 +16,21 @@ const WrapperDiv = styled.div`
   }
 `;
 
+class ButtonComponent extends React.Component<any, any> {
+  props: any;
+  componentDidMount() {
+    console.log("hi");
+  }
+
+  render() {
+    return <Button className={this.props.className}>Hi</Button>;
+  }
+}
+
+const StyledButtonComponent = styled(ButtonComponent)`
+  background-color: purple;
+`;
+
 const App = () => {
   return (
     <WrapperDiv>
@@ -24,6 +39,7 @@ const App = () => {
       <Button rotateForNoReason>Whee!</Button>
       <Button fontSize="50px">Big Button!</Button>
       <RedButton>Overriden to be RED!</RedButton>
+      <StyledButtonComponent />
     </WrapperDiv>
   );
 };

@@ -2,7 +2,13 @@ import colors from "../styles/colors";
 import * as animations from "../styles/animations";
 import styled from "styled-components";
 
-const getButtonColor = props => {
+interface ButtonProps {
+  primary: boolean;
+  secondary: boolean;
+  fontSize?: string;
+}
+
+const getButtonColor = (props: ButtonProps) => {
   if (props.secondary) {
     return colors.blue;
   }
